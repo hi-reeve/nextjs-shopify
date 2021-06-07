@@ -4,6 +4,7 @@ import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
 export async function getStaticProps(ctx: NextPageContext) {
     const collections: ShopifyBuy.Collection[] =
         await client.collection.fetchAll();
@@ -42,11 +43,23 @@ const Home: React.FC<Props> = ({ collections, products }) => {
                         />
                     )}
                 </div>
-                <h1 className="font-bold text-3xl my-5">Checkout our collections</h1>
+                <h1 className="font-bold text-3xl my-5">
+                    Checkout our collections
+                </h1>
                 <div className="grid grid-cols-4 gap-4 ">
                     {products &&
                         products.map(product => (
-                            <ProductCard key={product.id} product={product} />
+                            <Link
+                                href={`/products/${product.id}`}
+                                key={product.id}
+                            >
+                                <a>
+                                    <ProductCard
+                                        key={product.id}
+                                        product={product}
+                                    />
+                                </a>
+                            </Link>
                         ))}
                 </div>
             </div>
