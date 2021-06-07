@@ -1,7 +1,7 @@
 .product {
-	@apply p-4 shadow-md rounded;
+	@apply p-4 shadow-md rounded transform hover:scale-105 transition-all duration-300 ease-in-out;
     &__image {
-        @apply max-w-xs;
+        @apply max-w-xs object-cover;
     }
     &__title {
         @apply font-bold mt-2;
