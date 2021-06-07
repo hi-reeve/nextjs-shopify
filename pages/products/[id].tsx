@@ -32,7 +32,8 @@ const ProductDetail: React.FC<Props> = ({ product }) => {
         ];
         if (checkout) {
             await client.checkout.addLineItems(checkout.id, itemToAdd);
-            const cart = await client.checkout.fetch(checkout.id.toString());
+			const cart = await client.checkout.fetch(checkout.id.toString());
+			//@ts-ignore
             router.push(cart.webUrl);
         }
     };
