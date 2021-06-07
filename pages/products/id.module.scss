@@ -1,0 +1,11 @@
+.product {
+	&-detail{
+		@apply p-8;
+	}
+    &__image {
+        &--wrapper {
+            @apply max-w-xs object-cover w-1/2 flex-1;
+        }
+        @apply w-80;
+    }
+}

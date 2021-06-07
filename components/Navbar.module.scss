@@ -1,0 +1,12 @@
+.nav {
+    @apply px-8 py-4 flex w-full shadow-md;
+    &__menu {
+        @apply ml-auto;
+    }
+    &__link {
+        @apply px-4 py-2 hover:bg-gray-300 transition-all duration-300 ease-in-out;
+		&--active {
+			@apply bg-gray-300;
+		}
+    }
+}

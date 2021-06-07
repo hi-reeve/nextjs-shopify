@@ -1,0 +1,12 @@
+.product {
+	@apply p-4 shadow-md rounded;
+    &__image {
+        @apply max-w-xs;
+    }
+    &__title {
+        @apply font-bold mt-2;
+    }
+    &__price {
+        @apply text-sm mt-1;
+    }
+}
